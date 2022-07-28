@@ -9,10 +9,10 @@
 
 bst_t *array_to_bst(int *array, size_t size)
 {
-	bst_t *root = binary_tree_node(NULL, array[0]);
+	bst_t *root = NULL;
 	unsigned long int i;
 
-	for (i = 1; i < size; i++)
+	for (i = 0; i < size; i++)
 		bst_insert(&root, array[i]);
 	return (root);
 }
