@@ -18,7 +18,6 @@ bst_t *bst_insert(bst_t **tree, int value)
 		new_node = malloc(sizeof(bst_t));
 		if (!new_node)
 			return (NULL);
-		new_node->parent = NULL;
 		new_node->left = NULL;
 		new_node->right = NULL;
 		new_node->n = value;
