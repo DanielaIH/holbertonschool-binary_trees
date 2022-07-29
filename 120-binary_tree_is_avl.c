@@ -45,19 +45,20 @@ size_t binary_tree_height(const binary_tree_t *tree)
 
 int checkAVL(binary_tree_t *node, int min, int max)
 {
-    size_t left_height, right_height;
+	size_t left_height, right_height;
+
 	if (!node)
 		return (1);
 
 	if (node->n < min || node->n > max)
 		return (0);
-    
-    left_height = binary_tree_height(node->left);
-    right_height = binary_tree_height(node->right);
-    if ((left_height - right_height > 1) || (right_height - left_height > 1))
-    {
-        return (0);
-    }
+
+	left_height = binary_tree_height(node->left);
+	right_height = binary_tree_height(node->right);
+	if ((left_height - right_height > 1) || (right_height - left_height > 1))
+	{
+		return (0);
+	}
 	return (checkAVL(node->left, min, node->n - 1) &&
 	checkAVL(node->right, node->n + 1, max));
 }
